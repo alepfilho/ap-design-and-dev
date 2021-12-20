@@ -1,0 +1,373 @@
+$branco: #f4f9f9;
+$preto: #292b2b;
+$azul: #0439d9;
+$azul-dark: #04add9;
+
+#btn-dark-mode {
+  border: none;
+  background-color: $branco;
+  border-radius: 100px;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90px;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+
+  svg {
+    position: relative;
+    z-index: 2;
+  }
+  &.enable {
+    background-color: $preto;
+    #light-mode {
+      line,
+      circle {
+        stroke: $azul-dark;
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      background-color: $branco;
+      transform: translateX(87px-35px);
+      @media screen and (max-width: 500px) {
+        transform: translateX(82px-35px);
+      }
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    transform: translateX(3px);
+    top: 3px;
+    width: 35px;
+    height: 35px;
+    background-color: $azul-dark;
+    border-radius: 100px;
+    pointer-events: none;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+    @media screen and (max-width: 500px) {
+      transform: translateX(8px);
+    }
+  }
+}
+
+body {
+  background-color: $branco;
+}
+
+body.dark-mode {
+  background-color: $preto;
+
+  h2 {
+    color: $azul-dark;
+    font-weight: 900;
+  }
+  h3 {
+    font-weight: 900;
+  }
+
+  p {
+    color: $branco;
+    line-height: 1.8;
+  }
+
+  a {
+    font-size: 22px;
+    font-weight: 900;
+    text-decoration: none;
+    border: 2px solid $branco;
+    background-color: $branco;
+    border-radius: 100px;
+    padding: 20px 50px;
+    color: $preto;
+    margin: 0 30px;
+    box-shadow: inset 0 0 0 $azul-dark;
+    display: inline-block;
+    &:hover {
+      box-shadow: inset 9em 0 0 $azul-dark;
+      color: $preto;
+    }
+  }
+
+  header {
+    width: 100%;
+    top: 0;
+    position: fixed;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 50;
+    #Caminho_1 {
+      fill: $branco;
+    }
+    text {
+      fill: $branco;
+    }
+  }
+  .banner-home {
+    h1 {
+      color: $preto;
+    }
+  }
+  .card {
+    text-align: center;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    padding: 1em;
+    background-color: $preto;
+    h3 {
+      font-size: 18px;
+      font-weight: 900;
+      color: $branco;
+    }
+    &:hover {
+      background-color: $branco;
+      * {
+        color: $azul-dark;
+      }
+    }
+  }
+
+  .bg-blue {
+    background-color: $azul-dark;
+    * {
+      color: $branco;
+    }
+  }
+  .bg-invert {
+    background-color: $branco;
+
+    * {
+      color: $azul-dark;
+    }
+    .card {
+      background-color: $preto;
+      * {
+        color: $branco;
+      }
+      &:hover {
+        background-color: $branco;
+        * {
+          color: $azul-dark;
+        }
+      }
+    }
+  }
+
+  footer {
+    ul {
+      list-style-type: none;
+      display: flex;
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+          padding: 10px;
+          display: block;
+          background-color: transparent;
+          border: none;
+          box-shadow: none;
+          fill: $azul-dark;
+          path {
+            fill: $azul-dark;
+          }
+          &:hover {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}
+* {
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+}
+h2 {
+  color: $azul;
+  font-weight: 900;
+}
+h3 {
+  font-weight: 900;
+}
+
+p {
+  color: $preto;
+  line-height: 1.8;
+}
+
+a {
+  font-size: 22px;
+  font-weight: 900;
+  text-decoration: none;
+  border: 2px solid $preto;
+  background-color: $preto;
+  border-radius: 100px;
+  padding: 20px 50px;
+  color: $branco;
+  margin: 0 30px;
+  box-shadow: inset 0 0 0 $azul;
+  display: inline-block;
+  &:hover {
+    box-shadow: inset 9em 0 0 $azul;
+    color: $branco;
+  }
+}
+
+header {
+  width: 100%;
+  top: 0;
+  position: fixed;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 50;
+  @media screen and (max-width: 500px) {
+    svg {
+      width: 100px;
+    }
+  }
+}
+
+.banner-home {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  h1 {
+    font-weight: 900;
+    color: $branco;
+    font-size: 5rem;
+    @media screen and (max-width: 500px) {
+      font-size: 3rem;
+    }
+  }
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 101%;
+    min-height: 100%;
+    z-index: -1;
+  }
+}
+
+.card {
+  text-align: center;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  padding: 1em;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 900;
+    color: $azul;
+  }
+  &:hover {
+    background-color: $preto;
+    * {
+      color: $branco;
+    }
+  }
+}
+
+.bg-blue {
+  background-color: $azul;
+  * {
+    color: $branco;
+  }
+}
+.bg-invert {
+  background-color: $preto;
+
+  * {
+    color: $branco;
+  }
+  .card {
+    background-color: $preto;
+    * {
+      color: $branco;
+    }
+    &:hover {
+      background-color: $branco;
+      * {
+        color: $preto;
+      }
+    }
+  }
+}
+
+#clientes {
+  p {
+    font-size: 22px;
+  }
+}
+
+#depoimentos {
+  h2 {
+    font-size: 4rem;
+    font-weight: 900;
+    @media screen and (max-width: 500px) {
+      font-size: 2rem;
+    }
+  }
+  .scroll-depoimentos {
+    img:nth-child(odd) {
+      margin-left: 48%;
+    }
+  }
+}
+
+.round-20 {
+  border-radius: 20px;
+}
+
+footer {
+  svg {
+    height: 25px;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    @media screen and (max-width: 500px) {
+      justify-content: space-around;
+    }
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        padding: 10px;
+        display: block;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+
+        &:hover {
+          background-color: transparent;
+          border: none;
+          box-shadow: none;
+        }
+        @media screen and (max-width: 500px) {
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+}
