@@ -31,7 +31,7 @@
 }
 @media screen and (max-width: 500px) {
   #btn-dark-mode.enable:after {
-    transform: translateX(47px);
+    transform: translateX(55px);
   }
 }
 #btn-dark-mode:after {
@@ -50,12 +50,13 @@
 }
 @media screen and (max-width: 500px) {
   #btn-dark-mode:after {
-    transform: translateX(8px);
+    transform: translateX(3px);
   }
 }
 
 body {
   background-color: #f4f9f9;
+  overflow-x: hidden;
 }
 
 body.dark-mode {
@@ -225,8 +226,8 @@ header {
   z-index: 50;
 }
 @media screen and (max-width: 500px) {
-  header svg {
-    width: 100px;
+  header #logo {
+    width: 70px;
   }
 }
 
@@ -245,6 +246,10 @@ header {
     font-size: 3rem;
   }
 }
+.banner-home .container {
+  z-index: 20;
+  position: relative;
+}
 .banner-home video {
   position: absolute;
   top: 0;
@@ -252,6 +257,12 @@ header {
   min-width: 101%;
   min-height: 100%;
   z-index: -1;
+}
+.banner-home #imagens-projetos {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
 }
 
 .card {
@@ -302,10 +313,68 @@ header {
   color: #292b2b;
 }
 
+#servicos {
+  position: relative;
+}
+#servicos .float-right-img {
+  position: absolute;
+  right: 10px;
+  top: -10px;
+}
+@media screen and (max-width: 500px) {
+  #servicos .float-right-img {
+    width: 150px;
+    top: 20px;
+  }
+}
+#servicos .float-bottom-img {
+  position: absolute;
+  left: 10px;
+  bottom: -20%;
+}
+@media screen and (max-width: 500px) {
+  #servicos .float-bottom-img {
+    width: 150px;
+    bottom: -50px;
+  }
+}
+
+#clientes {
+  position: relative;
+}
+#clientes .float-right-img {
+  position: absolute;
+  right: 10px;
+  top: -15%;
+}
+@media screen and (max-width: 500px) {
+  #clientes .float-right-img {
+    width: 150px;
+    top: 20px;
+  }
+}
+#clientes .float-bottom-img {
+  position: absolute;
+  left: 10px;
+  bottom: -20%;
+}
+@media screen and (max-width: 500px) {
+  #clientes .float-bottom-img {
+    width: 150px;
+    bottom: -80px;
+  }
+}
 #clientes p {
   font-size: 22px;
 }
 
+#depoimentos {
+  position: relative;
+}
+#depoimentos * {
+  transform: scale(1);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+}
 #depoimentos h2 {
   font-size: 4rem;
   font-weight: 900;
@@ -315,8 +384,18 @@ header {
     font-size: 2rem;
   }
 }
+@media screen and (max-width: 500px) {
+  #depoimentos .scroll-depoimentos img {
+    width: 100%;
+  }
+}
 #depoimentos .scroll-depoimentos img:nth-child(odd) {
   margin-left: 48%;
+}
+@media screen and (max-width: 500px) {
+  #depoimentos .scroll-depoimentos img:nth-child(odd) {
+    margin-left: 0;
+  }
 }
 
 .round-20 {

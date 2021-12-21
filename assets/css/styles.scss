@@ -35,7 +35,7 @@ $azul-dark: #04add9;
       background-color: $branco;
       transform: translateX(87px-35px);
       @media screen and (max-width: 500px) {
-        transform: translateX(82px-35px);
+        transform: translateX(90px-35px);
       }
     }
   }
@@ -53,13 +53,14 @@ $azul-dark: #04add9;
     pointer-events: none;
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
     @media screen and (max-width: 500px) {
-      transform: translateX(8px);
+      transform: translateX(3px);
     }
   }
 }
 
 body {
   background-color: $branco;
+  overflow-x: hidden;
 }
 
 body.dark-mode {
@@ -234,8 +235,8 @@ header {
   background-color: rgba(255, 255, 255, 0.7);
   z-index: 50;
   @media screen and (max-width: 500px) {
-    svg {
-      width: 100px;
+    #logo {
+      width: 70px;
     }
   }
 }
@@ -252,6 +253,10 @@ header {
       font-size: 3rem;
     }
   }
+  .container{
+    z-index: 20;
+    position: relative;
+  }
   video {
     position: absolute;
     top: 0;
@@ -259,6 +264,13 @@ header {
     min-width: 101%;
     min-height: 100%;
     z-index: -1;
+  }
+  #imagens-projetos{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+
   }
 }
 
@@ -311,13 +323,58 @@ header {
   }
 }
 
+#servicos {
+  position: relative;
+  .float-right-img {
+    position: absolute;
+    right: 10px;
+    top: -10px;
+    @media screen and (max-width: 500px) {
+      width: 150px;
+      top: 20px;
+    }
+  }
+  .float-bottom-img {
+    position: absolute;
+    left: 10px;
+    bottom: -20%;
+    @media screen and (max-width: 500px) {
+      width: 150px;
+      bottom: -50px;
+    }
+  }
+}
 #clientes {
+  position: relative;
+  .float-right-img {
+    position: absolute;
+    right: 10px;
+    top: -15%;
+    @media screen and (max-width: 500px) {
+      width: 150px;
+      top: 20px;
+    }
+  }
+  .float-bottom-img {
+    position: absolute;
+    left: 10px;
+    bottom: -20%;
+    @media screen and (max-width: 500px) {
+      width: 150px;
+      bottom: -80px;
+    }
+  }
   p {
     font-size: 22px;
   }
 }
 
 #depoimentos {
+  position: relative;
+  * {
+    transform: scale(1);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+  }
   h2 {
     font-size: 4rem;
     font-weight: 900;
@@ -326,8 +383,17 @@ header {
     }
   }
   .scroll-depoimentos {
+    img{
+      
+    @media screen and (max-width:500px){
+      width: 100%;
+    }
+    }
     img:nth-child(odd) {
       margin-left: 48%;
+      @media screen and (max-width: 500px) {
+        margin-left: 0;
+      }
     }
   }
 }
